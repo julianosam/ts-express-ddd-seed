@@ -1,0 +1,5 @@
+--reporter spec
+--colors
+--include-all-sources
+--compilers ts:ts-node/register
+./src/**/*.ts ./test/unit/**/*.ts

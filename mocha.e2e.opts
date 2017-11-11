@@ -1,0 +1,6 @@
+ --ui bdd
+ --reporter spec
+ --colors
+ --compilers ts:ts-node/register
+ --exit
+ ./test/**/*.e2e.spec.ts

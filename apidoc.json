@@ -1,0 +1,13 @@
+{
+  "name": "Party Player API",
+  "version": "0.0.1",
+  "description": "Party Player API",
+  "title": "Party Player API",
+  "url": "http://localhost:3000",
+  "sampleUrl": "http://localhost:3000",
+  "template": {
+    "forceLanguage": "en",
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
