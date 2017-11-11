@@ -20,12 +20,8 @@ describe('Movies API', () => {
           category: 'Action'
         }
       })
-      .expect(httpStatus.OK)
-      .then((res) => {
-
-      })
+      .expect(httpStatus.OK);
   });
-
 
   it('should rent movies', () => {
 
@@ -37,11 +33,7 @@ describe('Movies API', () => {
       .send({
         movieId: 'rambo-iii'
       })
-      .expect(httpStatus.OK)
-      .then((res) => {
-
-      })
+      .expect(httpStatus.OK);
   });
-
 
 });

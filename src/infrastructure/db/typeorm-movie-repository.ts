@@ -1,8 +1,8 @@
-import { getRepository, createConnection } from "typeorm";
-import { MovieRepository } from "../../domain/movie-repository";
-import { Movie } from "../../domain/movie";
-import { injectable } from "inversify";
-import { logger } from "../../utils/logger";
+import { getRepository, createConnection } from 'typeorm';
+import { MovieRepository } from '../../domain/movie-repository';
+import { Movie } from '../../domain/movie';
+import { injectable } from 'inversify';
+import { logger } from '../../utils/logger';
 
 @injectable()
 export class TypeORMMovieRepository implements MovieRepository {
@@ -35,11 +35,11 @@ export class TypeORMMovieRepository implements MovieRepository {
             logger.info('Creating mongo connection pool...');
 
             return this._conn = createConnection({
-                "type": "mongodb",
-                "host": "localhost",
-                "port": 27017,
-                "database": "node_ts_seed",
-                "entities": [Movie]
+                type: 'mongodb',
+                host: 'localhost',
+                port: 27017,
+                database: 'node_ts_seed',
+                entities: [Movie]
             }).then((conn) => conn.getMongoRepository(Movie));
         }
     }

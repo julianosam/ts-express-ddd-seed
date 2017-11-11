@@ -41,8 +41,9 @@
       }
     ],
     "indent": [
-      "2",
-      "spaces"
+      true,
+      "spaces",
+      2
     ],
     "variable-name": [
       true,

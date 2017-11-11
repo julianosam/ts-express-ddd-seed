@@ -1,6 +1,6 @@
 {
-  "name": "node-ddd-seed",
-  "description": "Node DDD Seed",
+  "name": "ts-express-ddd-seed",
+  "description": "A seed sample project to experiment with DDD, Inverisfy.js, Typeorm and CQRS.",
   "version": "0.0.1",
   "author": "Juliano Sanches",
   "license": "MIT",
@@ -48,7 +48,8 @@
     "morgan": "1.9.0",
     "mongodb": "2.2.33",
     "typeorm": "0.1.2",
-    "class-validator": "0.7.3"
+    "class-validator": "0.7.3",
+    "winston": "2.4.0"
   },
   "devDependencies": {
     "@types/body-parser": "1.16.7",

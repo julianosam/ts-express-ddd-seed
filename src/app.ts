@@ -1,26 +1,25 @@
-import * as Express from "express";
-import Path = require("path");
+import * as Express from 'express';
+import Path = require('path');
 import * as morgan from 'morgan';
 import * as session from 'express-session';
 import { InversifyExpressServer } from 'inversify-express-utils';
 
 // IoC
-import './ioc-container';
 import { container } from './ioc-container';
 import { logger } from './utils';
 
 import { AppConfig } from '../config/app-config';
 
 // start the server
-let server = new InversifyExpressServer(container);
-server.setConfig((app) => {
+const server = new InversifyExpressServer(container);
+server.setConfig((App: any) => {
 
-  const cookieParser = require('cookie-parser'),
-    bodyParser = require('body-parser'),
-    compress = require('compression'),
-    methodOverride = require('method-override');
+  const cookieParser = require('cookie-parser');
+  const bodyParser = require('body-parser');
+  const compress = require('compression');
+  const methodOverride = require('method-override');
 
-  app
+  App
     .use(cookieParser())
     .use(compress({}))
     .use(methodOverride())
@@ -38,7 +37,7 @@ server.setConfig((app) => {
     .use('/apidoc', Express.static('apidoc'));
 });
 
-let app = server.build();
+const app = server.build();
 
 // Starts the app
 if (process.env.NODE_ENV !== 'unit-test') {

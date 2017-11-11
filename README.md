@@ -1,6 +1,6 @@
-# node-ddd-seed
+# ts-express-ddd-seed
 
-A seed sample project to experiment with DDD, Inverisfy.js, Typeorm and CQRS.
+A sample project to experiment with DDD, Inverisfy.js, Typeorm and CQRS.
 
 ### Installation
 Ensure that you have node >=6 and npm >=3 installed on your machine.

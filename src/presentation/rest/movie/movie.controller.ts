@@ -1,13 +1,11 @@
 import { inject, injectable } from 'inversify';
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 import { controller, httpPost, httpGet } from 'inversify-express-utils';
 import * as HTTP_CODES from 'http-status-codes';
 import { MovieStoreApplicationService } from '../../../application/movie-store-application-service';
 import { RegisterMovieCommand } from '../../../application/register-movie-command';
 import { RentMovieCommand } from '../../../application/rent-movie-command';
 import { logger } from '../../../utils/logger';
-
-
 
 @injectable()
 @controller('/api')
@@ -17,10 +15,10 @@ export class MovieController {
         @inject('MovieStoreApplicationService') private _movieStoreAppSvc: MovieStoreApplicationService
     ) { }
 
-    @httpGet('/movies/query')
-    searchMovies(request: any, response: Response) {
+    // @httpGet('/movies/query')
+    // searchMovies(request: any, response: Response) {
 
-    }
+    // }
 
     @httpPost('/movies/commands/register')
     registerMovie(request: any, response: Response) {
@@ -33,11 +31,11 @@ export class MovieController {
 
         return this._movieStoreAppSvc.registerMovie(movieRegCmd).then((movie) => {
             response.send(movie);
-        }).catch((err:Error) => {
+        }).catch((err: Error) => {
             logger.error(err.message);
             logger.error(err.stack);
-            
-            response.status(HTTP_CODES.INTERNAL_SERVER_ERROR).send(err.message)
+
+            response.status(HTTP_CODES.INTERNAL_SERVER_ERROR).send(err.message);
         });
     }
 
@@ -53,6 +51,5 @@ export class MovieController {
             response.send(movie);
         }).catch((err) => response.status(HTTP_CODES.INTERNAL_SERVER_ERROR).send(err));
     }
-
 
 }
