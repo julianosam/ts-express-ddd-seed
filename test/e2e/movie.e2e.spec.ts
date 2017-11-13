@@ -7,12 +7,14 @@ import { app } from '../../src/app';
 
 describe('Movies API', () => {
 
+  let movieId: string;
+
   it('should register a new movie', () => {
 
     return request(app)
       .post('/api/movies/commands/register')
       .set({
-        'customer-id': 'admin-1'
+        'customer-id': '1'
       })
       .send({
         movie: {
@@ -20,7 +22,8 @@ describe('Movies API', () => {
           category: 'Action'
         }
       })
-      .expect(httpStatus.OK);
+      .expect(httpStatus.OK)
+      .then((res: any) => movieId = res.body.id);
   });
 
   it('should rent movies', () => {
@@ -28,12 +31,27 @@ describe('Movies API', () => {
     return request(app)
       .post('/api/movies/commands/rent')
       .set({
-        'customer-id': 'customer-1'
+        'customer-id': '1'
       })
       .send({
-        movieId: 'rambo-iii'
+        movieId: `${movieId}`
       })
       .expect(httpStatus.OK);
   });
 
+  it('should not rent a movie thats currently unavalable', () => {
+
+    return request(app)
+      .post('/api/movies/commands/rent')
+      .set({
+        'customer-id': '1'
+      })
+      .send({
+        movieId: `${movieId}`
+      })
+      .expect(httpStatus.INTERNAL_SERVER_ERROR)
+      .then((res: any) => {
+        expect(res.text).to.eql('Movie is not available!');
+      });
+  });
 });

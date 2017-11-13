@@ -49,7 +49,11 @@ export class MovieController {
 
         return this._movieStoreAppSvc.rentMovie(movieRentCmd).then((movie) => {
             response.send(movie);
-        }).catch((err) => response.status(HTTP_CODES.INTERNAL_SERVER_ERROR).send(err));
+        }).catch((err) => {
+            logger.error(err.message);
+            logger.error(err.stack);
+            response.status(HTTP_CODES.INTERNAL_SERVER_ERROR).send(err.message);
+        });
     }
 
 }

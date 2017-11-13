@@ -1,30 +1,31 @@
 import 'reflect-metadata';
 import { interfaces, TYPE } from 'inversify-express-utils';
 import { Container } from 'inversify';
-import { TypeORMMovieRepository } from './infrastructure/db/typeorm-movie-repository';
+import { TypeORMMovieRepository } from './infrastructure/db/typeorm/typeorm-movie-repository';
 import { MovieRepository } from './domain/movie-repository';
 import { MovieController } from './presentation/rest/movie/movie.controller';
 import { MovieStoreApplicationService } from './application/movie-store-application-service';
-
-// Types
-
-let TYPES = {
-  MovieRepository: 'MovieRepository'
-};
-
+import { TypeORMConnectionService } from './infrastructure/db/typeorm/typeorm-connection-service';
+import { CustomerRepository } from './domain/customer-repository';
+import { TypeORMCustomerRepository } from './infrastructure/db/typeorm/typeorm-customer-repository';
+import { CustomerApplicationService } from './application/customer-application-service';
+import { CustomerController } from './presentation/rest/movie/customer-controller';
 
 const container = new Container();
 
+// Customer
+container.bind<interfaces.Controller>(TYPE.Controller).to(CustomerController).inSingletonScope().whenTargetNamed('CustomerController');
+container.bind<CustomerApplicationService>('CustomerApplicationService').to(CustomerApplicationService).inSingletonScope();
+container.bind<CustomerRepository>('CustomerRepository').to(TypeORMCustomerRepository).inSingletonScope();
 
 // Movies
 container.bind<interfaces.Controller>(TYPE.Controller).to(MovieController).inSingletonScope().whenTargetNamed('MovieController');
 container.bind<MovieStoreApplicationService>('MovieStoreApplicationService').to(MovieStoreApplicationService).inSingletonScope();
 container.bind<MovieRepository>('MovieRepository').to(TypeORMMovieRepository).inSingletonScope();
 
-
-
+// Database
+container.bind<TypeORMConnectionService>('TypeORMConnectionService').to(TypeORMConnectionService).inSingletonScope();
 
 export {
-  container,
-  TYPES
+  container
 };

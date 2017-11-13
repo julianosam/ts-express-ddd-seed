@@ -1,0 +1,14 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Local debugger",
+            "type": "node",
+            "program": "${workspaceFolder}/dist/src/app.js",
+            "stopOnEntry": false,
+            "sourceMaps": true,
+            "request": "launch",
+            "preLaunchTask": "build"
+        }
+    ]
+}

@@ -4,12 +4,15 @@ import { RegisterMovieCommand } from './register-movie-command';
 import { injectable, inject } from 'inversify';
 import { logger } from '../utils/logger';
 import { MovieRepository } from '../domain/movie-repository';
+import { Customer } from '../domain/customer';
+import { CustomerRepository } from '../domain/customer-repository';
 
 @injectable()
 export class MovieStoreApplicationService {
 
     constructor(
-        @inject('MovieRepository') private _movieRepo: MovieRepository
+        @inject('MovieRepository') private _movieRepo: MovieRepository,
+        @inject('CustomerRepository') private _customerRepo: CustomerRepository
     ) { }
 
     /**
@@ -18,12 +21,26 @@ export class MovieStoreApplicationService {
      *
      * @param movieRentalCmd - The command descriptor
      */
-    rentMovie(movieRentalCmd: RentMovieCommand): Promise<void> {
+    rentMovie(movieRentalCmd: RentMovieCommand): Promise<Movie> {
 
         logger.info('Renting movie!');
         logger.info(movieRentalCmd);
 
-        return Promise.resolve();
+        return Promise.all([
+            this._customerRepo.findById(movieRentalCmd.customerId),
+            this._movieRepo.findById(movieRentalCmd.movieId)
+        ]).then((values) => {
+            const customer: Customer = values[0];
+            const movie: Movie = values[1];
+
+            logger.info(customer);
+            logger.info(movie);
+
+            movie.rentTo(customer);
+
+            return this._movieRepo.update(movie);
+        });
+
     }
 
     /**
