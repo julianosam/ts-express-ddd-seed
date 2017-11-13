@@ -1,11 +1,11 @@
-import { Movie } from '../domain/movie';
-import { RentMovieCommand } from './rent-movie-command';
-import { RegisterMovieCommand } from './register-movie-command';
+import { Movie } from '../../domain/movie';
+import { RentMovieCommand } from './commands/rent-movie-command';
+import { RegisterMovieCommand } from './commands/register-movie-command';
 import { injectable, inject } from 'inversify';
-import { logger } from '../utils/logger';
-import { MovieRepository } from '../domain/movie-repository';
-import { Customer } from '../domain/customer';
-import { CustomerRepository } from '../domain/customer-repository';
+import { logger } from '../../utils/logger';
+import { MovieRepository } from '../../domain/movie-repository';
+import { Customer } from '../../domain/customer';
+import { CustomerRepository } from '../../domain/customer-repository';
 
 @injectable()
 export class MovieStoreApplicationService {

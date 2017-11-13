@@ -2,10 +2,10 @@ import { inject, injectable } from 'inversify';
 import { Request, Response } from 'express';
 import { controller, httpPost, httpGet } from 'inversify-express-utils';
 import * as HTTP_CODES from 'http-status-codes';
-import { MovieStoreApplicationService } from '../../../application/movie-store-application-service';
-import { RegisterMovieCommand } from '../../../application/register-movie-command';
-import { RentMovieCommand } from '../../../application/rent-movie-command';
 import { logger } from '../../../utils/logger';
+import { MovieStoreApplicationService } from '../../../application/movie/movie-store-application-service';
+import { RegisterMovieCommand } from '../../../application/movie/commands/register-movie-command';
+import { RentMovieCommand } from '../../../application/movie/commands/rent-movie-command';
 
 @injectable()
 @controller('/api')

@@ -1,7 +1,7 @@
 import { injectable, inject } from 'inversify';
-import { RegisterCustomerCommand } from './register-customer-command';
-import { CustomerRepository } from '../domain/customer-repository';
-import { Customer } from '../domain/customer';
+import { RegisterCustomerCommand } from './commands/register-customer-command';
+import { CustomerRepository } from '../../domain/customer-repository';
+import { Customer } from '../../domain/customer';
 
 @injectable()
 export class CustomerApplicationService {

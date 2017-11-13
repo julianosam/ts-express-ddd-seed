@@ -3,8 +3,8 @@ import { Request, Response } from 'express';
 import { controller, httpPost, httpGet } from 'inversify-express-utils';
 import * as HTTP_CODES from 'http-status-codes';
 import { logger } from '../../../utils/logger';
-import { CustomerApplicationService } from '../../../application/customer-application-service';
-import { RegisterCustomerCommand } from '../../../application/register-customer-command';
+import { CustomerApplicationService } from '../../../application/customer/customer-application-service';
+import { RegisterCustomerCommand } from '../../../application/customer/commands/register-customer-command';
 
 @injectable()
 @controller('/api')

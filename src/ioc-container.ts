@@ -4,12 +4,12 @@ import { Container } from 'inversify';
 import { TypeORMMovieRepository } from './infrastructure/db/typeorm/typeorm-movie-repository';
 import { MovieRepository } from './domain/movie-repository';
 import { MovieController } from './presentation/rest/movie/movie.controller';
-import { MovieStoreApplicationService } from './application/movie-store-application-service';
 import { TypeORMConnectionService } from './infrastructure/db/typeorm/typeorm-connection-service';
 import { CustomerRepository } from './domain/customer-repository';
 import { TypeORMCustomerRepository } from './infrastructure/db/typeorm/typeorm-customer-repository';
-import { CustomerApplicationService } from './application/customer-application-service';
 import { CustomerController } from './presentation/rest/movie/customer-controller';
+import { CustomerApplicationService } from './application/customer/customer-application-service';
+import { MovieStoreApplicationService } from './application/movie/movie-store-application-service';
 
 const container = new Container();
 

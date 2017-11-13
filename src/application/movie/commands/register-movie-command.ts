@@ -1,4 +1,4 @@
-import { Movie } from '../domain/movie';
+import { Movie } from '../../../domain/movie';
 
 export class RegisterMovieCommand {
     storeAdminId: string;
