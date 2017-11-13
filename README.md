@@ -1,8 +1,8 @@
 # ts-express-ddd-seed
 
-A sample project to experiment with latest frameworks, technologies and conceps like:
+A sample nodejs project to experiment with latest frameworks, technologies and conceps like:
 
-* Domain Driver Design (DDD)
+* Domain Driven Design (DDD)
 * Typescript
 * Inversify.js (DI)
 * Command Query Responsibility Segregation (CQRS)
@@ -18,12 +18,6 @@ $ git clone https://julianosam@bitbucket.org/julianosam/ts-express-ddd-seed.git
 $ cd ts-express-ddd-seed
 $ npm install
 $ npm start
-```
-
-Run the API console (apidoc):
-```sh
-$ npm start
-$ chrome http://localhost:3000/apidoc
 ```
 
 Run E2E tests and generate coverage report
