@@ -3,13 +3,13 @@ import { interfaces, TYPE } from 'inversify-express-utils';
 import { Container } from 'inversify';
 import { TypeORMMovieRepository } from './infrastructure/db/typeorm/typeorm-movie-repository';
 import { MovieRepository } from './domain/movie-repository';
-import { MovieController } from './presentation/rest/movie/movie.controller';
 import { TypeORMConnectionService } from './infrastructure/db/typeorm/typeorm-connection-service';
 import { CustomerRepository } from './domain/customer-repository';
 import { TypeORMCustomerRepository } from './infrastructure/db/typeorm/typeorm-customer-repository';
-import { CustomerController } from './presentation/rest/movie/customer-controller';
 import { CustomerApplicationService } from './application/customer/customer-application-service';
 import { MovieStoreApplicationService } from './application/movie/movie-store-application-service';
+import { MovieController } from './presentation/rest/movie.controller';
+import { CustomerController } from './presentation/rest/customer-controller';
 
 const container = new Container();
 

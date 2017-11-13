@@ -1,6 +1,12 @@
 # ts-express-ddd-seed
 
-A sample project to experiment with DDD, Inverisfy.js, Typeorm and CQRS.
+A sample project to experiment with latest frameworks, technologies and conceps like:
+
+* Domain Driver Design (DDD)
+* Typescript
+* Inversify.js (DI)
+* Command Query Responsibility Segregation (CQRS)
+* Typeorm
 
 ### Installation
 Ensure that you have node >=6 and npm >=3 installed on your machine.
