@@ -8,8 +8,8 @@ Ensure that you have node >=6 and npm >=3 installed on your machine.
 Clone the repo, install the dependencies and run the app:
 
 ```sh
-$ git clone https://julianosam@bitbucket.org/julianosam/node-ddd-seed.git
-$ cd node-ddd-seed
+$ git clone https://julianosam@bitbucket.org/julianosam/ts-express-ddd-seed.git
+$ cd ts-express-ddd-seed
 $ npm install
 $ npm start
 ```
