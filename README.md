@@ -2,11 +2,13 @@
 
 A sample nodejs project to experiment with latest frameworks, technologies and conceps like:
 
-* Domain Driven Design (DDD)
-* Typescript
-* Inversify.js (DI)
-* Command Query Responsibility Segregation (CQRS)
-* Typeorm
+* [Domain Driven Design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design)
+* [Typescript](https://www.typescriptlang.org/)
+* [Inversify.js (Inversion of control - DI)](http://inversify.io/)
+* [Command Query Responsibility Segregation (CQRS)](https://martinfowler.com/bliki/CQRS.html)
+* [Typeorm](http://typeorm.io)
+* Docker (**wip**)
+* APIDocs (**wip**)
 
 ### Installation
 Ensure that you have node >=6 and npm >=3 installed on your machine.
