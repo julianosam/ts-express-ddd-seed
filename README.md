@@ -1,12 +1,12 @@
 # ts-express-ddd-seed
 
-A sample nodejs project to experiment with latest frameworks, technologies and conceps like:
+A sample nodejs project to experiment with some enterprise software concepts as well as latest frameworks and technologies:
 
 * [Domain Driven Design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design)
 * [Typescript](https://www.typescriptlang.org/)
 * [Inversify.js (Inversion of control - DI)](http://inversify.io/)
 * [Command Query Responsibility Segregation (CQRS)](https://martinfowler.com/bliki/CQRS.html)
-* [Typeorm](http://typeorm.io)
+* [Typeorm](http://typeorm.io) - Transaction management still **wip**!
 * Docker (**wip**)
 * APIDocs (**wip**)
 
