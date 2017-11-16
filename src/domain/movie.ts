@@ -23,6 +23,7 @@ export class Movie {
      * @param customer The customer renting this movie
      */
     rentTo(customer: Customer) {
+        // FIXME: Need to explore transactional context here!
         if (this.currentlyRentedBy) {
             throw new Error('Movie is not available!');
         } else {
